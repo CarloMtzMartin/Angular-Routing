@@ -5,10 +5,12 @@ import { AuthService } from './user/auth.service';
 import { MessageService } from './messages/message.service';
 
 @Component({
-    selector: 'pm-app',
-    templateUrl: './app/app.component.html'
+  selector: 'pm-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
     
     pageTitle: string = 'Acme Product Management';
     loading = true;
@@ -52,4 +54,15 @@ export class AppComponent {
         console.log('Log out');
         this.router.navigateByUrl('/welcome')
     }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  get userName(): string {
+    if (this.authService.currentUser) {
+      return this.authService.currentUser.userName;
+    }
+    return '';
+  }
 }

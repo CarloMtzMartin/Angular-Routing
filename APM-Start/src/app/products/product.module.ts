@@ -3,10 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
-import { ProductEditComponent } from './product-edit.component';
-
-import { ProductFilterPipe } from './product-filter.pipe';
-import { ProductService } from './product.service';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 import { SharedModule } from '../shared/shared.module';
 import { ProductResolver } from './product-resolver.service';
@@ -42,6 +39,7 @@ const ROUTES = [
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
+<<<<<<< HEAD
     ProductEditComponent,
     ProductFilterPipe,
     ProductEditInfoComponent,
@@ -50,6 +48,9 @@ const ROUTES = [
   providers: [
     ProductService,
     ProductResolver
+=======
+    ProductEditComponent
+>>>>>>> 7df32edb50efc7045f13b9455a0099de0ade67c1
   ]
 })
-export class ProductModule {}
+export class ProductModule { }
